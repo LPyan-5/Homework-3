@@ -33,7 +33,8 @@ function separate(arr){
                 evens.push(arr[i]);
             }
             else
-            if(arr[i]%2===1){
+            
+            {
             
                 odds.push(arr[i]);
             }
@@ -43,7 +44,6 @@ function separate(arr){
     console.log(newarr);
 }
 separate([8,0,1,'hey',12,5,true,'2',null,7,3]);
-
 
 //Exercise 3
 Given an array of strings and numbers. Print the number of integers and the number of
@@ -73,6 +73,11 @@ Given an array of strings. Find the strings with maximum and minimum lengths in 
 Print the sum of their lengths.
 
 function lengthSum(arr){
+
+    if(arr.length===0){
+        console.log('Your array is empty:(')
+        return;
+    }
     let max=min=arr[0].length;
     for(let i=1;i<arr.length;i++){
         if(arr[i].length>max){
@@ -96,26 +101,13 @@ lengthSum(['wish', 'slightly', 'understand', 'longer',
 Given an array of numbers. Print the sum of the elements in array.
 
 function suM(arr){
-
-    if(arr.length===0)
-    {
-        console.log(0);
-        return;
-    }
-    else
-        if(arr.length===1){
         
-            console.log(arr[0]);
-            return;
-        }
-    
-        {
         let sum=0;
         for(let i=0;i<arr.length;i++){
             sum+=arr[i];
         }
         console.log(sum);
-    }
+    
     
 }
 suM([-1,0,1,2]);
@@ -127,9 +119,8 @@ Given an array. Create the array which elements are products between two neighbo
 function product(arr){
     let newarr=[];
     for(let i=0;i<arr.length-1;i++){
-        let p=1;
-        p*=arr[i]*arr[i+1];
-        newarr.push(p);
+
+        newarr.push(arr[i]*arr[i+1]);
     }
     console.log(newarr);
 
